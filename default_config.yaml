@@ -1,0 +1,38 @@
+# LGTTP Configuration File
+
+# Model configuration
+model:
+  type: "timechat"  # Options: "timechat", "llava_video"
+  
+# LGTTP specific parameters
+lgttp:
+  alpha: 0.65  # Overall pruning rate (65% compression)
+  min_token_ratio: 0.1  # Minimum tokens to retain per frame (10%)
+  lambda_cooccurrence: 2.0  # Concentration parameter for co-occurrence weights
+
+# Task configuration  
+task:
+  type: ""  # Options: "video_qa", "temporal_grounding", "highlight_detection"
+
+# Training configuration
+training:
+  epochs: 20
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  batch_size: 8
+  gradient_clip: 1.0
+  patience: 5  # Early stopping patience
+  save_every: 5  # Save checkpoint every N epochs
+  efficiency_weight: 0.1  # Weight for compression bonus in loss
+
+# Data configuration
+data:
+  max_frames: 128
+  frame_sample_rate: 1
+  video_resolution: [224, 224]
+
+# Paths
+paths:
+  checkpoints: "checkpoints/"
+  logs: "logs/"
+  data_root: "data/"
