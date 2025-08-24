@@ -7,9 +7,10 @@
 git clone https://github.com/yogesh-iitj/LGTTP.git
 cd LGTTP
 pip install -r requirements.txt
-
+```
 ## Repository Structure
 
+```
 LGTTP/
 ├── README.md
 ├── requirements.txt
@@ -31,23 +32,26 @@ LGTTP/
 └── examples/
     ├── demo.py
     └── integration_example.py
+```
 
 ## Training
-# Train with TimeChat integration
+```
 python train.py --config configs/default_config.yaml --data_dir /path/to/data
+```
 
-# Customize training parameters
-python train.py --config configs/custom_config.yaml --data_dir /path/to/data
+
 
 ## Inference
 
-# Interactive demo
+
+```
 python inference.py --model_path checkpoints/best_model.pth --mode demo
+```
 
-# Evaluate on test dataset  
+## Evaluate on test dataset  
+```
 python inference.py --model_path checkpoints/best_model.pth --mode eval --test_data /path/to/test
+```
 
-# Batch inference
-python inference.py --model_path checkpoints/best_model.pth --mode eval --output results.json
 
 
